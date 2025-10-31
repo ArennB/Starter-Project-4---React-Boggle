@@ -1,0 +1,52 @@
+/* Board container */
+.Board-div {
+  display: flex;
+  justify-content: center;
+  margin: 16px auto;
+  /* allow the inline grid styles in Board.js to size the grid */
+}
+
+/* Individual tile (letter box) */
+.Tile {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f3f6fb 100%);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  color: #1f2937;
+  font-weight: 600;
+  user-select: none;
+  /* default size — Board.js inline styles will override width/height per grid size */
+  width: 56px;
+  height: 56px;
+  margin: 0;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+/* Slight hover/press effect for interactivity */
+.Tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(15, 23, 42, 0.12);
+  cursor: default;
+}
+
+/* Large-letter styling */
+.Tile > * {
+  pointer-events: none;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 4px;
+}
+
+/* Make sure the grid stays centered and responsive on small screens */
+@media (max-width: 480px) {
+  .Tile {
+    width: 40px;
+    height: 40px;
+    font-size: 0.95rem;
+    border-radius: 4px;
+  }
+}
